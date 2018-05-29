@@ -1,0 +1,3 @@
+Welcome to lambda expression.
+This is an amazing process for code optimization.
+carry on.
