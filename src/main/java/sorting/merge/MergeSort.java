@@ -1,6 +1,8 @@
 package sorting.merge;
 
-public class MergeSort {private int[] numbers;
+public class MergeSort {
+
+    private int[] numbers;
     private int[] helper;
 
     private int number;

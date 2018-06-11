@@ -4,7 +4,11 @@ package basicAlgo;
  * Created by psi143 on 11/14/2016.
  */
 public class StringUtil {
-
+    /**
+     * Permutation of string
+     *
+     * @param str
+     */
     public static void permutation(String str) {
         permutation("", str);
     }

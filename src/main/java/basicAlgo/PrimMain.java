@@ -38,10 +38,10 @@ public class PrimMain {
         return factorList;
     }
 
-    private static boolean isNoPrime(int isPrime) {
-        if ((isPrime != 1) && (isPrime != 0)) {
-            for (int i = 2; i <= isPrime / 2; i++) {
-                if (isPrime % i == 0) {
+    private static boolean isNoPrime(int number) {
+        if ((number != 1) && (number != 0)) {
+            for (int i = 2; i <= number / 2; i++) {
+                if (number % i == 0) {
                     return false;
                 }
             }

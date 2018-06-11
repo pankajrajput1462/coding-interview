@@ -58,5 +58,28 @@ public class ArrayAlgorithm {
         arr[j] = temp;
     }
 
+    /**
+     * Find odd and even no in array
+     */
+    public static void evenOddFinder(int[] arr) {
+        int length = arr.length;
+        int i = 0;
+        for (int j = 0; j != length; j++) {
+            if (arr[j] % 2 == 0) {
+                swap(arr, i, j);
+                i++;
+            }
+        }
+        for (int anArr : arr) {
+            System.out.println("arr[i1] = " + anArr);
+        }
+    }
+
+    private static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
 
 }

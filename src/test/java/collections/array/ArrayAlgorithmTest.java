@@ -17,4 +17,14 @@ class ArrayAlgorithmTest {
         int[] expected = {0, 0, 0, 0, 1, 1, 1, 1};
         assertArrayEquals(expected, ArrayAlgorithm.sortBasedOnZero(booleans));
     }
+
+    @Test
+    void sortBasedOnZero1() {
+    }
+
+    @Test
+    void evenOddFinder() {
+        int[] arr = {5, 8, 9, 66, 3, 7, 8};
+        ArrayAlgorithm.evenOddFinder(arr);
+    }
 }

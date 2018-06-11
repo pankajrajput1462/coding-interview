@@ -7,16 +7,15 @@ import java.text.MessageFormat;
  */
 public class App {
     public static void main(String[] args) {
-       /* StringUtil stringUtil = new StringUtil();
+       StringUtil stringUtil = new StringUtil();
         System.out.println("Permutations are :  ");
         stringUtil.permutation("ABC");
-        System.out.println(" \n ******************** \n");
+    /*    System.out.println(" \n ******************** \n");
         Combinations combobj = new Combinations("ABC");
         System.out.println("Combinations are :  ");
         combobj.combine();
-*/
         final String pankaj = MessageFormat.format("My name is {0} in India {1}", "pankaj","pll");
-        System.out.println("pankaj = " + pankaj);
+        System.out.println("pankaj = " + pankaj);*/
 
      /*   BruteForceAlgo forceAlgo= new BruteForceAlgo();
         String pat="abbbbbbaaaabbbccccc";

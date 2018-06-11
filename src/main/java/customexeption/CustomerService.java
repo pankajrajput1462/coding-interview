@@ -25,16 +25,18 @@ public class CustomerService {
 
 			Customer cus = obj.findByName("pankaj");
 
-		} catch (NameNotFoundException e) {
-			log.info("Name : {}",e.getMessage());
+		} catch (NameFormatException e) {
+			log.info("Name Not : {}",e.getMessage());
 
+		} catch (NameNotFoundException e) {
+			e.printStackTrace();
 		}
 
 		try {
 			final Customer pankaj = obj.findByName("");
 			System.out.println("pankaj = " + pankaj.toString());
 		} catch (NameNotFoundException e) {
-			log.info("Name : {}",e.getMessage());
+			log.info("Name format  : {}",e.getMessage());
 		}
 
 	}

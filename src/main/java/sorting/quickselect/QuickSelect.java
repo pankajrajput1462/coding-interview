@@ -2,43 +2,48 @@ package sorting.quickselect;
 
 import java.util.Random;
 
+/*
+For find the max element in unsorted array
+
+Best algo for quick select
+ */
 public class QuickSelect {
 
-	public int quickselect(int[] G, int nthMax) {
-		  return quickselect(G, 0, G.length - 1, nthMax - 1);
-		}
-		 
-		private int quickselect(int[] G, int first, int last, int k) {
-		  if (first <= last) {
-		    int pivot = partition(G, first, last);
-		    if (pivot == k) {
-		      return G[k];
-		    }
-		    if (pivot > k) {
-		      return quickselect(G, first, pivot - 1, k);
-		    }
-		    return quickselect(G, pivot + 1, last, k);
-		  }
-		  return Integer.MIN_VALUE;
-		}
-		 
-		private int partition(int[] G, int first, int last) {
-		  int pivot = first + new Random().nextInt(last - first + 1);
-		  swap(G, last, pivot);
-		  for (int i = first; i < last; i++) {
-		    if (G[i] > G[last]) {
-		      swap(G, i, first);
-		      first++;
-		    }
-		  }
-		  swap(G, first, last);
-		  return first;
-		}
-		 
-		private void swap(int[] G, int x, int y) {
-		  int tmp = G[x];
-		  G[x] = G[y];
-		  G[y] = tmp;
-		}
-	
+    public int quickselect(int[] arr, int nthMax) {
+        return quickselect(arr, 0, arr.length - 1, nthMax - 1);
+    }
+
+    private int quickselect(int[] arr, int low, int high, int k) {
+        if (low <= high) {
+            int pivot = partition(arr, low, high);
+            if (pivot == k) {
+                return arr[k];
+            }
+            if (pivot > k) {
+                return quickselect(arr, low, pivot - 1, k);
+            }
+            return quickselect(arr, pivot + 1, high, k);
+        }
+        return Integer.MIN_VALUE;
+    }
+
+    private int partition(int[] arr, int low, int high) {
+        int pivot = low + (high - low)/2;
+        swap(arr, high, pivot);
+        for (int i = low; i < high; i++) {
+            if (arr[i] > arr[high]) {
+                swap(arr, i, low);
+                low++;
+            }
+        }
+        swap(arr, low, high);
+        return low;
+    }
+
+    private void swap(int[] arr, int x, int y) {
+        int tmp = arr[x];
+        arr[x] = arr[y];
+        arr[y] = tmp;
+    }
+
 }
