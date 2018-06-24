@@ -1,4 +1,4 @@
-package basicAlgo;
+package string;
 
 /* A Java program to evaluate a given expression where tokens are separated
 by space.

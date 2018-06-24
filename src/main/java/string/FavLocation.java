@@ -1,4 +1,4 @@
-package basicAlgo;
+package string;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

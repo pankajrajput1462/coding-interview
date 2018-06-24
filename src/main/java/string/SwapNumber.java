@@ -1,4 +1,4 @@
-package basicAlgo;
+package string;
 
 // Java program to check if two strings are meta strings
 

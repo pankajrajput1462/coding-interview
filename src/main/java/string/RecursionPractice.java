@@ -1,4 +1,4 @@
-package basicAlgo;
+package string;
 
 public class RecursionPractice {
     public static void main(String[] args) {

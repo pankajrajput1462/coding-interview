@@ -1,4 +1,4 @@
-package basicAlgo;
+package string;
 
 public class PrimitiveLearning {
     //private  int a;

@@ -1,4 +1,4 @@
-package basicAlgo;
+package string;
 
 /**
  * Created by psi143 on 2/27/2017.
