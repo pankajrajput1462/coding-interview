@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * Pattern search in sentence
+ * Pattern search in sentence included dynamic programming
  */
 public class PatternMatch {
     /**
