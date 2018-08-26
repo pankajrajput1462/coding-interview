@@ -20,6 +20,7 @@ public class SharedFiFoQueue {
 
     public void add(Object elem) throws InterruptedException {
         lock.lock();
+        lock.lockInterruptibly();
         try {
             while (current >= elems.length) {
                 isFull.await();

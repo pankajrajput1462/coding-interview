@@ -5,12 +5,12 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 class RunnableThread implements Runnable {
-    Lock lock;
-    Condition condition1;
-    Condition condition2;
-    Condition condition3;
-    boolean isOnePrint = false;
-    boolean isTwoPrint = false;
+    private Lock lock;
+    private Condition condition1;
+    private Condition condition2;
+    private Condition condition3;
+    private boolean isOnePrint = false;
+    private boolean isTwoPrint = false;
 
     public RunnableThread(Lock lock, Condition condition1, Condition condition2, Condition condition3) {
         this.lock = lock;
@@ -30,7 +30,7 @@ class RunnableThread implements Runnable {
         }
     }
 
-    public void methodForT1() {
+    private void methodForT1() {
         lock.lock();
         try {
             for (int i = 1; i <= 15; i += 3) {
@@ -51,7 +51,7 @@ class RunnableThread implements Runnable {
         }
     }
 
-    public void methodForT2() {
+    private void methodForT2() {
         lock.lock();
         try {
             for (int i = 2; i <= 15; i += 3) {
@@ -73,7 +73,7 @@ class RunnableThread implements Runnable {
         }
     }
 
-    public void methodForT3() {
+    private void methodForT3() {
         lock.lock();
         try {
             for (int i = 3; i <= 15; i += 3) {
