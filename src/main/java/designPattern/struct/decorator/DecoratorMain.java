@@ -1,5 +1,8 @@
 package designPattern.struct.decorator;
 
+/**
+ * https://www.journaldev.com/1540/decorator-design-pattern-in-java-example
+ */
 public class DecoratorMain {
     public static void main(String[] args) {
         Car car = new SportsCarImpl(new BasicCarImpl());
