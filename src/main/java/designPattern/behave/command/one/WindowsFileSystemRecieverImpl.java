@@ -1,4 +1,4 @@
-package designPattern.behave.command;
+package designPattern.behave.command.one;
 
 import lombok.NoArgsConstructor;
 

@@ -1,4 +1,4 @@
-package designPattern.behave.command;
+package designPattern.behave.command.one;
 
 public class OpenFileCommand implements Command {
     private FileSystemReciever reciever;
