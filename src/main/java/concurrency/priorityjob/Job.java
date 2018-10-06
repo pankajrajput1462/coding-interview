@@ -1,4 +1,4 @@
-package priorityjob;
+package concurrency.priorityjob;
 
 import lombok.Data;
 

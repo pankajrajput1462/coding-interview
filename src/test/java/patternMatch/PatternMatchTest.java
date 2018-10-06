@@ -2,6 +2,7 @@ package patternMatch;
 
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
+import string.PatternMatch;
 
 import static org.junit.jupiter.api.Assertions.*;
 

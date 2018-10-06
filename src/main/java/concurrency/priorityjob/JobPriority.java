@@ -1,4 +1,4 @@
-package priorityjob;
+package concurrency.priorityjob;
 
 public enum JobPriority {
     HIGH,

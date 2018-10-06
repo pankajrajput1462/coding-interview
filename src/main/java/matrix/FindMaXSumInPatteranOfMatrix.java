@@ -1,4 +1,4 @@
-package online.two_d;
+package matrix;
 
 import java.util.Scanner;
 

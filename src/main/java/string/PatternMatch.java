@@ -1,4 +1,4 @@
-package patternMatch;
+package string;
 
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
