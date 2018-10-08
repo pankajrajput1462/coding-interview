@@ -3,9 +3,7 @@ package collections.linkedlist;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
-public class LinkedListAlgTest {
+public class LinkedListAlgorithmTest {
 
     @Before
     public void setUp() throws Exception {
@@ -13,7 +11,7 @@ public class LinkedListAlgTest {
 
     @Test
     public void isLoop() {
-        LinkedListAlg llist = new LinkedListAlg();
+        LinkedListAlgorithm llist = new LinkedListAlgorithm();
         llist.addNode(55);
         llist.addNode(20);
         llist.addNode(4);

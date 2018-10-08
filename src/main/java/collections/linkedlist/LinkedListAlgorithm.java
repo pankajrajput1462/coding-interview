@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Data
-public class LinkedListAlg {
+public class LinkedListAlgorithm {
 
     private Node head;
 
@@ -29,6 +29,23 @@ public class LinkedListAlg {
             }
         }
         return false;
+    }
+
+    /**
+     *Detecting the loop in linked list
+     */
+    public Node getMiddleElement(Node node){
+        Node slow_ptr = node;
+        Node fast_ptr = node;
+        if (node!=null) {
+
+            while (fast_ptr!=null&& fast_ptr.next!=null){
+                slow_ptr=slow_ptr.next;
+               fast_ptr= fast_ptr.next.next;
+            }
+        }
+        System.out.println("slow_ptr = " + slow_ptr);
+        return slow_ptr;
     }
 
     public void addNode(int data) {
