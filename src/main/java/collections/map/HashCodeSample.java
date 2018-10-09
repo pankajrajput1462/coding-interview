@@ -84,7 +84,17 @@ public class HashCodeSample {
 			System.out.println(entry.getValue());
 			
 		}
-		
+
+		Map<String, Boolean> library= new HashMap<>();
+		library.put("Book1",true);
+		library.put("Book2",true);
+		library.put("Book3",false);
+		library.forEach((key, value) -> {
+			if(value){
+				System.out.println("Book = " + value);
+			}
+		});
+
 	}
 	
 }
