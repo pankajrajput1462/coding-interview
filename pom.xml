@@ -15,7 +15,7 @@
     </build>
 
     <groupId>pan.org</groupId>
-    <artifactId>ds</artifactId>
+    <artifactId>datastrcuture</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
