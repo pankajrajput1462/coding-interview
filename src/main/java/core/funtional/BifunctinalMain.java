@@ -30,6 +30,7 @@ public class BifunctinalMain {
         BiPredicate<Integer,String> biPredicate = (integer, s) -> integer.floatValue()>3&&!s.isEmpty();
         boolean pankaj = biPredicate.test(8, "pankaj");
         System.out.println("pankaj = " + pankaj);
+
     }
 
 }
