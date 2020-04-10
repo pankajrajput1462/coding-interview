@@ -10,12 +10,14 @@ public class CommandDemo {
         Light light = new Light();
         Switch lightSwitch = new Switch();
         //Command
-//        Command onCommand = new OnCommand(light);
+        Command onCommandLightOn = new OnCommand(light);
+        lightSwitch.storeAndExecuteCommand(onCommandLightOn);
         Command onCommand = new ToggleCommand(light);
         //Command execute
         lightSwitch.storeAndExecuteCommand(onCommand);
-     //   lightSwitch.storeAndExecuteCommand(onCommand);
-       // lightSwitch.storeAndExecuteCommand(onCommand);
+        lightSwitch.storeAndExecuteCommand(onCommand);
+        lightSwitch.storeAndExecuteCommand(onCommand);
+        lightSwitch.storeAndExecuteCommand(onCommand);
 
         Light bedRoomLight = new Light();
         Light kitchenLight = new Light();

@@ -1,6 +1,7 @@
 package collections.bfsdfs;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The Node class represents a station in this tutorial and will as such have a
@@ -9,39 +10,32 @@ import java.util.ArrayList;
  */
 public class Node {
 
-	// A Unique Identifier for our node
-	public String stationName;
-	public String getStationName() {
-		return stationName;
-	}
+    /* A Unique Identifier for our node */
+    public String stationName;
 
-	// An arraylist containing a list of Nodes that
-	// This node is directly connected to - It's child nodes.
-	Node leftChild;
-	Node rightChild;
+    public String getStationName() {
+        return stationName;
+    }
 
-	public Node(String stationName, Node firstChild, Node secondChild) {
-		this.stationName = stationName;
-		this.leftChild = firstChild;
-		this.rightChild = secondChild;
-	}
+    /* An arraylist containing a list of Nodes that.
+    This node is directly connected to - It's child nodes. */
+    Node leftChild;
+    Node rightChild;
 
-	public ArrayList<Node> getChildren() {
-		ArrayList<Node> childNodes = new ArrayList<>();
-		if (this.leftChild != null) {
-			childNodes.add(leftChild);
-		}
-		if (this.rightChild != null) {
-			childNodes.add(rightChild);
-		}
-		return childNodes;
-	}
+    public Node(String stationName, Node firstChild, Node secondChild) {
+        this.stationName = stationName;
+        this.leftChild = firstChild;
+        this.rightChild = secondChild;
+    }
 
-	// An auxiliary function which allows
-	// us to remove any child nodes from
-	// our list of child nodes.
-	public boolean removeChild(Node n) {
-		return false;
-	}
-
+    public List<Node> getChildren() {
+        ArrayList<Node> childNodes = new ArrayList<>();
+        if (this.leftChild != null) {
+            childNodes.add(leftChild);
+        }
+        if (this.rightChild != null) {
+            childNodes.add(rightChild);
+        }
+        return childNodes;
+    }
 }

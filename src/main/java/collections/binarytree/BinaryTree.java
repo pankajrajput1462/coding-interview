@@ -49,7 +49,7 @@ public class BinaryTree {
 			/* Display tree */
 			
 			System.out.print("\nPost order : ");
-			bt.postorder();
+			bt.postOrder();
 			System.out.print("\nPre order : ");
 			bt.preorder();
 			System.out.print("\nIn order : ");

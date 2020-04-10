@@ -26,7 +26,7 @@ class PatternMatchTest {
 
         assertTrue(PatternMatch.strMatch(str, "*****ba*****ab", str.length(),
                 pattern.length()));
-        assertTrue(PatternMatch.strMatch(str, "ba*****ab", str.length(),
+        assertTrue(PatternMatch.strMatch(str, "ba*****ab", str.length()-1,
                 pattern.length()));
         assertTrue(PatternMatch.strMatch(str, "ba*ab", str.length(),
                 pattern.length()));

@@ -2,7 +2,7 @@ package collections.array;
 
 public class SecondLargestInArray {
 
-    public static int[] findUpperMaxValue(final int[] array) {
+    public int[] findUpperMaxValue(final int[] array) {
         int[] value = new int[2];
         int largest = 0;
         int secLargest = 0;

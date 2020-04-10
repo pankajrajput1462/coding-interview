@@ -1,51 +1,52 @@
 package collections.map;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.TreeMap;
 
+@Slf4j
 public class FrequencyTable {
 
-	
-	
-	public static void main(String[] args) {
-		frequencyByHashMap();
-		frequencyByTreeMap();
-	}
+    public static Map<String, Integer> frequencyByHashMap(String line) {
+        Map<String, Integer> integerHashMap = new HashMap<String, Integer>();
 
-	
+        if (Objects.isNull(line) && line.isEmpty()) {
+            line = "if it is to be it is up to me to delegate";
+        }
+        String[] list = line.split(" ");
 
-	private static void frequencyByHashMap() {
-		Map<String, Integer> m = new HashMap<String, Integer>();
+        // Initialize frequency table from command line
+        for (String a : list) {
+            Integer freq = integerHashMap.get(a);
+            integerHashMap.put(a, (freq == null) ? 1 : freq + 1);
+        }
 
-		String line="if it is to be it is up to me to delegate";
-		String[] list = line.split(" ");
-		
-		// Initialize frequency table from command line
-		for (String a : list) {
-			Integer freq = m.get(a);
-			m.put(a, (freq == null) ? 1 : freq + 1);
-		}
+        log.info(integerHashMap.size() + " distinct words:");
+        log.info("{}", integerHashMap);
+        return integerHashMap;
+    }
 
-		System.out.println(m.size() + " distinct words:");
-		System.out.println(m);
-	}
+    public static Map<String, Integer> frequencyByTreeMap(String line) {
+        Map<String, Integer> treeMap = new TreeMap<>();
 
-	private static void frequencyByTreeMap() {
-		Map<String, Integer> m = new TreeMap<String, Integer>();
+        if (Objects.isNull(line) && line.isEmpty()) {
+            line = "if it is to be it is up to me to delegate";
+        }
+        String[] list = line.split(" ");
 
-		String line="if it is to be it is up to me to delegate";
-		String[] list = line.split(" ");
-		
-		// Initialize frequency table from command line
-		for (String a : list) {
-			Integer freq = m.get(a);
-			m.put(a, (freq == null) ? 1 : freq + 1);
-		}
+        // Initialize frequency table from command line
+        for (String a : list) {
+            Integer freq = treeMap.get(a);
+            treeMap.put(a, (freq == null) ? 1 : freq + 1);
+        }
 
-		System.out.println(m.size() + " distinct words:");
-		System.out.println(m);
-	}
+        log.info(treeMap.size() + " distinct words:");
+        log.info("{}", treeMap);
+        return treeMap;
+    }
 
-	
+
 }

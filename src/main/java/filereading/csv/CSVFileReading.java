@@ -1,8 +1,10 @@
 package filereading.csv;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import util.DSUtil;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,23 +15,19 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
+@Slf4j
 public class CSVFileReading {
-    public static void main(String[] args) throws IOException, URISyntaxException {
-
-
-        String path="/home/pankaj/gitHub/usecase/src/main/java/com/filereading/csv/student.csv";
+    public static void csvFileRead() throws IOException {
+        final String path = DSUtil.getFilePathFromResource("student.csv");
         final BufferedReader reader = Files.newBufferedReader(Paths.get(path));
-       // CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT);
-        CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withHeader("name","id"));
-        final List<CSVRecord> records = csvParser.getRecords();
-        for (int i = 0; i < records.size(); i++) {
-            final CSVRecord record = records.get(i);
-            //System.out.println("record = " + record);
-           // System.out.println("record = " + record.get("id"));
+        final List<CSVRecord> records;
+        try (CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withHeader("name", "id"))) {
+            records = csvParser.getRecords();
+        }
+        for (final CSVRecord record : records) {
             final String name = record.get(0);
             final String id = record.get(1);
-            System.out.println("Name : id " + name+" , "+id);
+            log.info("{} {}", name, id);
         }
-
     }
 }

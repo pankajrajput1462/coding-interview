@@ -1,7 +1,5 @@
 package sorting.quickselect;
 
-import java.util.Random;
-
 /*
 For find the max element in unsorted array
 

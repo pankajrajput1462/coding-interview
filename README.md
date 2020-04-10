@@ -1,2 +1,2 @@
 # DataStructure in Java
-This Repo contais basic example and practice of data structure related to java
+This Repo contais basic example and dailypractice.practice of data structure related to java
