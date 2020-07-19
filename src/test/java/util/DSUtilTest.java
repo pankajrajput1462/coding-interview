@@ -5,8 +5,6 @@ import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @Slf4j
 class DSUtilTest {
 
@@ -16,14 +14,14 @@ class DSUtilTest {
 
     @Test
     void getFilePathFromResource() {
-        final String filePathFromResource = DSUtil.getFilePathFromResource("data.csv");
+        final String filePathFromResource = DSUtil.getFilePathFromResource("data1.csv");
         log.info("{}", filePathFromResource);
         Assert.assertNotNull(filePathFromResource);
     }
 
     @Test
     void getFileNameFromResource() {
-        final String fileNameFromResource = DSUtil.getFileNameFromResource("data.csv");
+        final String fileNameFromResource = DSUtil.getFileNameFromResource("data1.csv");
         log.info("{}", fileNameFromResource);
         Assert.assertNotNull(fileNameFromResource);
 
