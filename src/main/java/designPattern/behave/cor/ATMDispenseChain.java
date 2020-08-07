@@ -6,7 +6,7 @@ import java.util.Scanner;
  * https://www.journaldev.com/1540/decorator-design-pattern-in-java-example
  */
 public class ATMDispenseChain {
-    private DispenseChain chain1;
+    private final DispenseChain chain1;
 
     public ATMDispenseChain() {
         chain1 = new Dispense50ChainImpl();

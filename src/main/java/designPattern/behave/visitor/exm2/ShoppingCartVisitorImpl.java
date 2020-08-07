@@ -3,7 +3,7 @@ package designPattern.behave.visitor.exm2;
 public class ShoppingCartVisitorImpl implements ShoppingCartVisitor {
     @Override
     public int visit(Book book) {
-        int cost = 0;
+        int cost;
         //apply 5 price discount if book price is more then 50
         int price = book.getPrice();
         if (price > 50) {

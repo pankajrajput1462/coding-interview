@@ -14,6 +14,6 @@ public class AddItemTopic implements Topic {
 
     @Override
     public void notifyObservers(String line) {
-        addItemObs.stream().forEach(observer -> observer.update(line));
+        addItemObs.forEach(observer -> observer.update(line));
     }
 }

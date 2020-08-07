@@ -77,7 +77,9 @@ public class CompletableFutureMain {
 
 
     public void futureDemo() {
-        CompletableFuture.supplyAsync(this::sendMesg).thenApply(Integer::floatValue).thenAccept(this::brodcast);
+        CompletableFuture.supplyAsync(this::sendMesg)
+                .thenApply(Integer::floatValue)
+                .thenAccept(this::brodcast);
     }
 
     private int sendMesg() {

@@ -7,9 +7,11 @@ public class FindMaxNumberThenTwoNumbers {
         int second = Integer.MAX_VALUE;
 
         for (int i = 0; i < n; i++) {
-            // If current element is smaller
-            // than first then update both
-            // first and second
+            /*
+             If current element is smaller
+             than first then update both
+             first and second
+            */
             if (arr[i] > first) {
                 second = first;
                 first = arr[i];
@@ -21,9 +23,6 @@ public class FindMaxNumberThenTwoNumbers {
             else if (arr[i] > second)
                 second = arr[i];
         }
-
-        for (int i = 0; i < n; i++)
-            if (arr[i] < second)
-                System.out.print(arr[i] + " ");
+        System.out.println(first + " " + second);
     }
 }

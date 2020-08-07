@@ -1,9 +1,10 @@
 package designPattern.struct.decorator;
 
 public class CarDecorator implements Car {
-    private Car car;
+    private final Car car;
 
     public CarDecorator(Car car) {
+        System.out.println("Setting");
         this.car = car;
     }
 

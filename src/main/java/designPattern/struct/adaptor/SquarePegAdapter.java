@@ -3,7 +3,7 @@ package designPattern.struct.adaptor;
 public class SquarePegAdapter {
 
 	// The adapter/wrapper class "has a" instance of the legacy class
-	private SquarePeg sp;
+	private final SquarePeg sp;
 
 	public SquarePegAdapter(double w) {
 		sp = new SquarePeg(w);
