@@ -11,7 +11,7 @@ public class ExecuterMain {
         for (int i = 0; i < 1000; i++) {
             taskList.add("Pankaj: " + i);
         }
-        executorService.submit(new Job(taskList));
-        executorService.submit(new Job(taskList));
+        executorService.execute(new Job(taskList));
+        executorService.execute(new Job(taskList));
     }
 }
