@@ -1,16 +1,16 @@
 package collections.array;
 
-public class ArrayAlgorithm {
+import java.util.Arrays;
+
+public class ArrayAlgorithm implements ArrayAlgorithmBasicAlgo {
     /**
      * program  for sorting an array by 0 ,1 or so on
      */
-    public static int[] sortBasedOnZero(int[] arr) {
+    public int[] sortBasedOnZero(int[] arr) {
         int k = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == 0) {
-                int temp = arr[i];
-                arr[i] = arr[k];
-                arr[k] = temp;
+                swap(arr, i, k);
                 k++;
             }
         }
@@ -20,9 +20,8 @@ public class ArrayAlgorithm {
     /**
      * Delete element from array in generic way
      */
-    private static void deleteElement(int[] arr, int ele) {
+    public static void deleteElement(int[] arr, int ele) {
         int i = 0;
-
         for (; i < arr.length; i++) {
             if (ele == arr[i]) {
                 break;
@@ -38,21 +37,18 @@ public class ArrayAlgorithm {
      * <p>
      * Rotate one by one
      */
-    private int[] leftRotate(int arr[], int d, int n) {
+    public static void leftRotate(int[] arr, int rotationNumber) {
 
-        int i;
-        int size = arr.length;
-        for (int j = 0; j < d; j++) {
-            leftRotateByOne(arr, size);
+        int len = arr.length;
+        for (int j = 0; j < rotationNumber; j++) {
+            leftRotateByOne(arr, len);
         }
-        return arr;
     }
 
-    private void leftRotateByOne(int[] arr, int size) {
-
+    private static void leftRotateByOne(int[] arr, int len) {
         int j, temp;
         temp = arr[0];
-        for (j = 0; j < size - 1; j++) {
+        for (j = 0; j < len - 1; j++) {
             arr[j] = arr[j + 1];
         }
         arr[j] = temp;
@@ -61,8 +57,11 @@ public class ArrayAlgorithm {
     /**
      * Find odd and even no in array
      */
-    public static void evenOddFinder(int[] arr) {
+    public void evenOddFinder(int[] arr) {
         int length = arr.length;
+        /*
+        For tracking the last index number where we have to swap the coming even number
+         */
         int i = 0;
         for (int j = 0; j != length; j++) {
             if (arr[j] % 2 == 0) {
@@ -71,15 +70,28 @@ public class ArrayAlgorithm {
             }
         }
         for (int anArr : arr) {
-            System.out.println("arr[i1] = " + anArr);
+            System.out.println("Even Odd : " + anArr);
         }
     }
 
-    private static void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+
+    public static int[] removeElements(int[] arr, int key) {
+        // Move all other elements to beginning
+        int index = 0;
+        for (int i = 0; i < arr.length; i++)
+            if (arr[i] != key)
+                arr[index++] = arr[i];
+
+        // Create a copy of arr[]
+        return Arrays.copyOf(arr, index);
     }
 
+    public int getMissingNo(int a[], int n) {
+        int i, total;
+        total = (n + 1) * (n + 2) / 2;
+        for (i = 0; i < n; i++)
+            total -= a[i];
+        return total;
+    }
 
 }

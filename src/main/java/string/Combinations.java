@@ -3,10 +3,10 @@ package string;
 public class Combinations {
 
     private StringBuilder output = new StringBuilder();
-    private final String inputstring;
+    private final String inputString;
 
     public Combinations(final String str) {
-        inputstring = str;
+        inputString = str;
     }
 
     public void combine() {
@@ -14,10 +14,10 @@ public class Combinations {
     }
 
     private void combine(int start) {
-        for (int i = start; i < inputstring.length(); i++) {
-            output.append(inputstring.charAt(i));
+        for (int i = start; i < inputString.length(); i++) {
+            output.append(inputString.charAt(i));
             System.out.println(output);
-            if (i < inputstring.length()) {
+            if (i < inputString.length()) {
                 combine(i + 1);
             }
             output.setLength(output.length() - 1);

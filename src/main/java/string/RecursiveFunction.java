@@ -13,14 +13,14 @@ public class RecursiveFunction {
         }
     } /* * Fibonacci series in Java of a given number Recursion. */
 
-    public static int getFibonacci(int n) {
-        if (n == 1) {
+    public static int getFibonacci(int number) {
+        if (number == 1) {
             return 1;
         }
-        if (n == 2) {
+        if (number == 2) {
             return 1;
         }
-        return getFibonacci(n - 1) + getFibonacci(n - 2);
+        return getFibonacci(number - 1) + getFibonacci(number - 2);
     }
 
 

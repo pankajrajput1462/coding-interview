@@ -7,12 +7,12 @@ public class SecondLargestInArray {
         int largest = 0;
         int secLargest = 0;
 
-        for (int i : array) {
-            if (largest < i) {
+        for (int indexValue : array) {
+            if (indexValue > largest) {
+                largest = indexValue;
                 secLargest = largest;
-                largest = i;
-            } else if (secLargest < i) {
-                secLargest = i;
+            } else if (indexValue > secLargest) {
+                secLargest = indexValue;
             }
         }
 

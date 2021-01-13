@@ -13,6 +13,7 @@ class StackTest {
     void isBracketMatch() {
         final BracketMatch bracketMatch = new BracketMatch();
         assertTrue(bracketMatch.isBracketMatch("{()}"));
+        assertTrue(bracketMatch.isBracketMatch("((()))"));
         assertTrue(bracketMatch.isBracketMatch("[{()}]"));
         assertFalse(bracketMatch.isBracketMatch("{(}"));
         assertFalse(bracketMatch.isBracketMatch("{()"));
@@ -23,8 +24,10 @@ class StackTest {
 
     @Test
     void expressionEvaluation() {
-        final int evaluate = new ExpressionEvaluation().evaluate("4 + 55");
-        assertEquals(59, evaluate);
+//        final int evaluate1 = new ExpressionEvaluation().evaluate("4 + 55");
+        final int evaluate2 = new ExpressionEvaluation().evaluate("(4+55)+(4*6)");
+//        assertEquals(59, evaluate1);
+        assertEquals(83, evaluate2);
 
     }
 

@@ -11,15 +11,17 @@ public class LinkedListAlgorithmTest {
 
     @Test
     public void isLoop() {
-        LinkedListAlgorithm llist = new LinkedListAlgorithm();
-        llist.addNode(55);
-        llist.addNode(20);
-        llist.addNode(4);
-        llist.addNode(15);
-        llist.addNode(10);
-
+        CustomLinkedList nodeList = new CustomLinkedList();
+        nodeList.add(55);
+        nodeList.add(20);
+        nodeList.add(4);
+        nodeList.add(15);
+        nodeList.add(10);
+        LinkedListAlgorithm algorithm = new LinkedListAlgorithm();
         /*Create loop for testing */
-        llist.getHead().next.next.next.next = llist.getHead();
-        System.out.println("llist.isLoop() = " + llist.isLoop());;
+//        nodeList.getHead().next.next.next.next = nodeList.getHead();
+//        System.out.println("nodeList.isLoop() = " + algorithm.isLoop());
+        System.out.println("Middle Element = " + algorithm.getMiddleElement(nodeList.getHead()));
+//        System.out.println("nth Element = " + algorithm.printNthFromTheLast(nodeList.getHead(), 1));
     }
 }

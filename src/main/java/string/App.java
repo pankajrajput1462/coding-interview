@@ -5,7 +5,7 @@ package string;
  */
 public class App {
     public static void main(String[] args) {
-       StringUtil stringUtil = new StringUtil();
+        StringUtil stringUtil = new StringUtil();
         System.out.println("Permutations are :  ");
         stringUtil.permutation("ABC");
     /*    System.out.println(" \n ******************** \n");
@@ -31,9 +31,9 @@ public class App {
 
 */
 
-        // System.out.println(RecursiveFunction.fibonaaci());
-        // StringUtil.removeDuplicates("pankaj".toCharArray());
-        //   boolean anagram = StringUtil.anagram("Pan", "nP");
-        // System.out.println(anagram);
+        System.out.println(RecursiveFunction.getFibonacci(6));
+        StringUtil.removeDuplicates("pankaj".toCharArray());
+        boolean anagram = StringUtil.anagram("Pan", "nP");
+        System.out.println(anagram);
     }
 }

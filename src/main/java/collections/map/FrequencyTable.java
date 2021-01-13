@@ -12,7 +12,6 @@ public class FrequencyTable {
 
     public static Map<String, Integer> frequencyByHashMap(String line) {
         Map<String, Integer> integerHashMap = new HashMap<String, Integer>();
-
         if (Objects.isNull(line) && line.isEmpty()) {
             line = "if it is to be it is up to me to delegate";
         }

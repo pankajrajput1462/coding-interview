@@ -7,10 +7,10 @@ public class StringUtil {
     /**
      * Permutation of string
      *
-     * @param str
+     * @param strForPermutation
      */
-    public static void permutation(String str) {
-        permutation("", str);
+    public static void permutation(String strForPermutation) {
+        permutation("", strForPermutation);
     }
 
     public static void removeDuplicates(char[] strArray) {
@@ -77,7 +77,8 @@ public class StringUtil {
             System.out.println(prefix);
         else {
             for (int i = 0; i < n; i++)
-                permutation(prefix + str.charAt(i), str.substring(0, i) + str.substring(i + 1, n));
+                permutation(prefix + str.charAt(i),
+                        str.substring(0, i) + str.substring(i + 1, n));
         }
     }
 

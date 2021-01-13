@@ -2,6 +2,7 @@ package collections.stack;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.Stack;
 
 public class BracketMatch {
 
@@ -9,9 +10,8 @@ public class BracketMatch {
         if (bracket.isEmpty()) {
             return true;
         }
-        char[] chars = bracket.toCharArray();
-        Deque<Character> stack = new ArrayDeque<>();
-        for (char singleBracket : chars) {
+        Stack<Character> stack = new Stack<>();
+        for (char singleBracket : bracket.toCharArray()) {
             if (singleBracket == '{' || singleBracket == '[' || singleBracket == '(') {
                 stack.push(singleBracket);
             } else {

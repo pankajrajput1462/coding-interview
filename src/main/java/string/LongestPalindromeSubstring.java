@@ -7,8 +7,9 @@ public class LongestPalindromeSubstring {
 
     public String longestPalindrome(String src) {
         int length = src.length();
-        /**
-         * table[i}[j] will be false if substring[i..j] is not palindrome else it will be true
+        /*
+         * table[i}[j] will be false if substring[i..j] is
+         * not palindrome else it will be true
          */
         boolean[][] table = new boolean[length][length];
         //all string of length 1 is palindrome
@@ -51,7 +52,7 @@ public class LongestPalindromeSubstring {
         int row = table.length;
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < table[i].length; j++) {
-                System.out.print(" "+table[i][j]+" ");
+                System.out.print(" " + table[i][j] + " ");
             }
             System.out.println();
         }
