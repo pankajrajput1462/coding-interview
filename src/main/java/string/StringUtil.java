@@ -1,5 +1,7 @@
 package string;
 
+import java.util.Arrays;
+
 /**
  * Created by psi143 on 11/14/2016.
  */
@@ -79,6 +81,27 @@ public class StringUtil {
             for (int i = 0; i < n; i++)
                 permutation(prefix + str.charAt(i),
                         str.substring(0, i) + str.substring(i + 1, n));
+        }
+    }
+
+    public static void permutationSortedOrderRepeatingChar(String str) {
+        final int length = str.length();
+        final char[] data = new char[length + 1];
+        final char[] temp = str.toCharArray();
+        Arrays.sort(temp);
+        str = new String(temp);
+        allLexographicRec(str, data, length - 1, 0);
+    }
+
+    private static void allLexographicRec(String source, char[] data, int last, int index) {
+        final int length = source.length();
+        for (int i = 0; i < length; i++) {
+            data[index] = source.charAt(i);
+            if (index == last) {
+                System.out.println("Permutation: "+new String(data));
+            } else {
+                allLexographicRec(source, data, last, index + 1);
+            }
         }
     }
 

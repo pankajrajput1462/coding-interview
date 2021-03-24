@@ -5,9 +5,8 @@ package string;
  */
 public class App {
     public static void main(String[] args) {
-        StringUtil stringUtil = new StringUtil();
         System.out.println("Permutations are :  ");
-        stringUtil.permutation("ABC");
+        StringUtil.permutation("ABC");
     /*    System.out.println(" \n ******************** \n");
         Combinations combobj = new Combinations("ABC");
         System.out.println("Combinations are :  ");
