@@ -1,5 +1,6 @@
 package onlineexam;
 
+import onlineexam.one.DistributeBalls;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

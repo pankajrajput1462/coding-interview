@@ -6,7 +6,7 @@ import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.BiPredicate;
 
-public class BifunctinalMain {
+public class BiFunctinalMain {
 
     BiConsumer<String,String> biConsumer= (s, s2) -> {
 
@@ -22,12 +22,12 @@ public class BifunctinalMain {
         };
         map.forEach(biConsumer);
 
-        BiFunction<Integer,Integer,Integer> biFunction=(x, y) -> x+y;
+        BiFunction<Integer,Integer,Integer> biFunction= Integer::sum;
         Integer apply = biFunction.apply(5, 6);
         System.out.println("apply = " + apply);
         Float apply1 = biFunction.andThen(Integer::floatValue).apply(5, 6);
         System.out.println("apply1 = " + apply1);
-        BiPredicate<Integer,String> biPredicate = (integer, s) -> integer.floatValue()>3&&!s.isEmpty();
+        BiPredicate<Integer,String> biPredicate = (integer, s) -> integer.floatValue()>3;
         boolean pankaj = biPredicate.test(8, "pankaj");
         System.out.println("pankaj = " + pankaj);
 

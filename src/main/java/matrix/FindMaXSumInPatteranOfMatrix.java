@@ -34,7 +34,7 @@ import java.util.Scanner;
 public class FindMaXSumInPatteranOfMatrix {
     private static final int _MAX = 6; // size of matrix
     private static final int _OFFSET = 2; // hourglass width
-    private static int matrix[][] = new int[_MAX][_MAX];
+    private static final int[][] matrix = new int[_MAX][_MAX];
     private static int maxHourglass = -63; // initialize to lowest possible sum (-9 x 7)
 
     /**

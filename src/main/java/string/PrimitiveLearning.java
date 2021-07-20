@@ -18,14 +18,13 @@ public class PrimitiveLearning {
     private void sample()
     {
         byte b=127;
-        Byte aByte=new Byte(b);
 
-       // System.out.println("a = " + a);
+        // System.out.println("a = " + a);
         System.out.println("l = " + l);
         System.out.println("f = " + f);
         System.out.println("d = " + d);
         System.out.println("b = " + b);
-        System.out.println("aByte = " + aByte);
+        System.out.println("aByte = " + b);
     }
 
     public static void main(String[] args) {

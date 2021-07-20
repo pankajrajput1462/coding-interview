@@ -1,4 +1,4 @@
-package onlineexam;
+package onlineexam.one;
 
 public class DistributeBalls {
     /*

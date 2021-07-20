@@ -8,8 +8,6 @@ import java.util.Arrays;
 public class StringUtil {
     /**
      * Permutation of string
-     *
-     * @param strForPermutation
      */
     public static void permutation(String strForPermutation) {
         permutation("", strForPermutation);

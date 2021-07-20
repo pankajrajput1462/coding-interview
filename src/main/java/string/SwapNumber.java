@@ -6,11 +6,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-class Test
-{
+public class SwapNumber {
     // Returns true if str1 and str2 are meta strings
-    static int areMetaStrings(String str1, String str2)
-    {
+    static int areMetaStrings(String str1, String str2) {
         int len1 = str1.length();
         int len2 = str2.length();
 
@@ -20,10 +18,8 @@ class Test
         int prev = 0, curr = 0;
 
         int count = 0;
-        for (int i=0; i<len1; i++)
-        {
-            if (str1.charAt(i) != str2.charAt(i))
-            {
+        for (int i = 0; i < len1; i++) {
+            if (str1.charAt(i) != str2.charAt(i)) {
                 count++;
                 if (count > 2)
                     return -1;
@@ -40,13 +36,13 @@ class Test
 
     // Driver method
     public static void main(String args[]) throws IOException {
-        BufferedReader reader= new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         /*final String src = reader.readLine();
         final String target = reader.readLine();*/
 
         String src = "1110";
-        String target= "1101";
+        String target = "1101";
 
-        System.out.println(areMetaStrings(src,target));
+        System.out.println(areMetaStrings(src, target));
     }
 }

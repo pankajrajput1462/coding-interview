@@ -49,10 +49,9 @@ public class LongestPalindromeSubstring {
     }
 
     private void printTableInMatrixFormat(boolean[][] table) {
-        int row = table.length;
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < table[i].length; j++) {
-                System.out.print(" " + table[i][j] + " ");
+        for (boolean[] booleans : table) {
+            for (boolean aBoolean : booleans) {
+                System.out.print(" " + aBoolean + " ");
             }
             System.out.println();
         }

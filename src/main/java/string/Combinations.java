@@ -17,9 +17,7 @@ public class Combinations {
         for (int i = start; i < inputString.length(); i++) {
             output.append(inputString.charAt(i));
             System.out.println(output);
-            if (i < inputString.length()) {
-                combine(i + 1);
-            }
+            combine(i + 1);
             output.setLength(output.length() - 1);
         }
     }

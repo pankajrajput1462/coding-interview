@@ -77,14 +77,14 @@ class BT {
     }
 
     /* Function to count number of nodes recursively */
-    private int countNodes(BTNode r) {
-        if (r == null)
+    private int countNodes(BTNode node) {
+        if (node == null)
             return 0;
         else {
-            int l = 1;
-            l += countNodes(r.getLeft());
-            l += countNodes(r.getRight());
-            return l;
+            int count = 1;
+            count += countNodes(node.getLeft());
+            count += countNodes(node.getRight());
+            return count;
         }
     }
 
@@ -101,8 +101,7 @@ class BT {
             if (search(node.getLeft(), val))
                 return true;
         if (node.getRight() != null)
-            if (search(node.getRight(), val))
-                return true;
+            return search(node.getRight(), val);
         return false;
     }
 
@@ -111,11 +110,11 @@ class BT {
         inorder(root);
     }
 
-    private void inorder(BTNode r) {
-        if (r != null) {
-            inorder(r.getLeft());
-            System.out.print(r.getData() + " ");
-            inorder(r.getRight());
+    private void inorder(BTNode node) {
+        if (node != null) {
+            inorder(node.getLeft());
+            System.out.print(node.getData() + " ");
+            inorder(node.getRight());
         }
     }
 
@@ -124,11 +123,11 @@ class BT {
         preorder(root);
     }
 
-    private void preorder(BTNode r) {
-        if (r != null) {
-            System.out.print(r.getData() + " ");
-            preorder(r.getLeft());
-            preorder(r.getRight());
+    private void preorder(BTNode node) {
+        if (node != null) {
+            System.out.print(node.getData() + " ");
+            preorder(node.getLeft());
+            preorder(node.getRight());
         }
     }
 

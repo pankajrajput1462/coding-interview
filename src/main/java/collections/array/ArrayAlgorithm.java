@@ -86,7 +86,7 @@ public class ArrayAlgorithm implements ArrayAlgorithmBasicAlgo {
         return Arrays.copyOf(arr, index);
     }
 
-    public int getMissingNo(int a[], int n) {
+    public int getMissingNo(int[] a, int n) {
         int i, total;
         total = (n + 1) * (n + 2) / 2;
         for (i = 0; i < n; i++)

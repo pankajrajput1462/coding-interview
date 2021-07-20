@@ -30,8 +30,6 @@ public class LinkedListAlgorithm {
 
     /**
      * Detecting the loop in linked list
-     *
-     * @return
      */
     public int getMiddleElement(Node head) {
         Node slow_ptr = head;
@@ -49,8 +47,6 @@ public class LinkedListAlgorithm {
 
     /**
      * Print  nth from the last
-     *
-     * @return
      */
     int printNthFromTheLast(Node head, int n) {
         int length = 0;
