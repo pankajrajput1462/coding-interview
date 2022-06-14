@@ -5,12 +5,11 @@ import java.util.concurrent.BlockingQueue;
 
 public class QueueMain {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		BlockingQueue<String> arrayBlockingQueue = new ArrayBlockingQueue<String>(
-				8);
+        BlockingQueue<String> arrayBlockingQueue = new ArrayBlockingQueue<>(8);
 
-		arrayBlockingQueue.offer("hh");
-		arrayBlockingQueue.forEach(System.out::println);
-	}
+        arrayBlockingQueue.offer("hh");
+        arrayBlockingQueue.forEach(System.out::println);
+    }
 }

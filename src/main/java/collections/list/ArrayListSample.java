@@ -17,7 +17,7 @@ public class ArrayListSample {
         //  Iterator<String> listIterator = list.listIterator();
         ListIterator<String> listIterator = list.listIterator();
         while (listIterator.hasNext()) {
-            String string = (String) listIterator.next();
+            String string = listIterator.next();
             System.out.println(string);
             if (string.equals("pan5")) {
                 listIterator.add("new");

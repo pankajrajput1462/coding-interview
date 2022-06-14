@@ -1,7 +1,6 @@
 package immutability;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -19,10 +18,8 @@ final public class CardDetails {
         this.acccount = acccount;
         strings = magicWords;
 
-        HashMap<String, String> tmap = new HashMap<String, String>();
-        Iterator<String> iterator = map.keySet().iterator();
-        while (iterator.hasNext()) {
-            String key = iterator.next();
+        HashMap<String, String> tmap = new HashMap<>();
+        for (String key : map.keySet()) {
             tmap.put(key, map.get(key));
         }
         this.hashMap = tmap;

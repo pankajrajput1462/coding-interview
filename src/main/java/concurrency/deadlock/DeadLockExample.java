@@ -3,7 +3,6 @@ package concurrency.deadlock;
 public class DeadLockExample {
     final static Object lockObject1 = new Object();
     final static Object lockObject2 = new Object();
-    final static Object lockObject3 = new Object();
 
     public static void main(String[] args) {
         Thread t1 = new Thread(new WorkerOne(), "one");

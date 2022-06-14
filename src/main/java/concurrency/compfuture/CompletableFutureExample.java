@@ -11,10 +11,10 @@ import java.util.function.Supplier;
  * https://dotnetcodr.com/2016/12/04/getting-a-result-from-a-parallel-task-in-java-using-completablefuture/
  */
 interface CalculationService {
-    int calculate(int first,int second);
+    int calculate(int first, int second);
 }
 
-class AdditionService implements CalculationService{
+class AdditionService implements CalculationService {
 
     @Override
     public int calculate(int first, int second) {
@@ -23,59 +23,48 @@ class AdditionService implements CalculationService{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return first+second;
+        return first + second;
     }
 }
- class SubtractionService implements CalculationService
-{
+
+class SubtractionService implements CalculationService {
 
     @Override
-    public int calculate(int first, int second)
-    {
-        try
-        {
+    public int calculate(int first, int second) {
+        try {
             Thread.sleep(2000);
-        } catch (InterruptedException ex)
-        {
+        } catch (InterruptedException ex) {
             //ignore
         }
         return first - second;
     }
 }
 
- class MultiplicationService implements CalculationService
-{
+class MultiplicationService implements CalculationService {
     @Override
-    public int calculate(int first, int second)
-    {
-        try
-        {
+    public int calculate(int first, int second) {
+        try {
             Thread.sleep(3000);
-        } catch (InterruptedException ex)
-        {
+        } catch (InterruptedException ex) {
             //ignore
         }
         return first * second;
     }
 }
 
- class DivisionService implements CalculationService
-{
+class DivisionService implements CalculationService {
     @Override
-    public int calculate(int first, int second)
-    {
-        try
-        {
+    public int calculate(int first, int second) {
+        try {
             Thread.sleep(4000);
-        } catch (InterruptedException ex)
-        {
+        } catch (InterruptedException ex) {
             //ignore
         }
         return first / second;
     }
 }
 
-class  CalculationSupplier implements Supplier<Integer> {
+class CalculationSupplier implements Supplier<Integer> {
 
     private CalculationService service;
     private int firstOp;
@@ -89,19 +78,19 @@ class  CalculationSupplier implements Supplier<Integer> {
 
     @Override
     public Integer get() {
-        return service.calculate(firstOp,secOp);
+        return service.calculate(firstOp, secOp);
     }
 }
 
-public class CompletableFutureExample{
+public class CompletableFutureExample {
     public static void main(String[] args) {
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
         CalculationService additionService = new AdditionService();
         CalculationService multiplicationService = new MultiplicationService();
         CalculationService divisionService = new DivisionService();
         CalculationService subtractionService = new SubtractionService();
-        int firs=6;
-        int sec=4;
+        int firs = 6;
+        int sec = 4;
         CompletableFuture<Integer> addCompletableFuture =
                 CompletableFuture.supplyAsync(new CalculationSupplier(additionService, firs, sec), cachedThreadPool);
         CompletableFuture<Integer> subCompletableFuture =
@@ -116,16 +105,13 @@ public class CompletableFutureExample{
         allTasks.add(mulCompletableFuture);
         allTasks.add(divCompletableFuture);
 
-        for (CompletableFuture<Integer> task : allTasks)
-        {
+        for (CompletableFuture<Integer> task : allTasks) {
             task.whenComplete((result, exception)
                     ->
             {
-                if (exception == null)
-                {
-                    System.out.println("Result: "+result);
-                } else
-                {
+                if (exception == null) {
+                    System.out.println("Result: " + result);
+                } else {
                     task.completeExceptionally(exception);
                     System.out.println(exception.getMessage());
                 }
