@@ -1,6 +1,7 @@
 package patternMatch;
 
-import org.junit.Before;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import string.PatternMatch;
 
@@ -8,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PatternMatchTest {
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
     }
 

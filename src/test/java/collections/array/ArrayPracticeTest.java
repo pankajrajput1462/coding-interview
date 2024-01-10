@@ -1,6 +1,7 @@
 package collections.array;
 
-import org.junit.Assert;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -10,7 +11,7 @@ public class ArrayPracticeTest {
     @Test
     public void findMissingNumber() {
         int missingNumber = getMissingNumber();
-        Assert.assertEquals(4, missingNumber);
+        Assertions.assertEquals(4, missingNumber);
     }
 
     private int getMissingNumber() {

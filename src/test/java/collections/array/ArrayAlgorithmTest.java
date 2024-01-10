@@ -1,6 +1,6 @@
 package collections.array;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -58,7 +58,7 @@ class ArrayAlgorithmTest {
         int[] arr = {5, 8, 9, 66, 3, 7, 8};
         int[] ints = arrayAlgorithm.removeElements(arr, 8);
         int[] expected = new int[]{5, 9, 66, 3, 7};
-        Assert.assertArrayEquals(expected, ints);
+        Assertions.assertArrayEquals(expected, ints);
         Arrays.stream(ints).forEach(System.out::println);
     }
 

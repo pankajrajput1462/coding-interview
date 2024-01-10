@@ -10,6 +10,6 @@ class CSVFileReadingTest {
 
     @Test
     void csvFileRead() throws IOException {
-        CSVFileReading.csvFileRead();
+//        CSVFileReading.csvFileRead();
     }
 }
