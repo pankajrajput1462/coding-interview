@@ -35,8 +35,8 @@ public class LambdaExpression {
         }*/
 
         List<String> str = Arrays.asList("a", "b", "A", "B");
-        str.sort((o1, o2) -> o1.compareTo(o2));
-        str.sort((s1, s2) -> s1.compareToIgnoreCase(s2));
+        str.sort(String::compareTo);
+        str.sort(String::compareToIgnoreCase);
         str.sort(String::compareTo);
         str.sort(String::compareToIgnoreCase);
         Function<Apple, Integer> getWeight = Apple::getWeight;
