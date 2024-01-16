@@ -1,7 +1,9 @@
 package collections.bfsdfs;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
+@Slf4j
 class GraphTest {
 
     @Test
@@ -17,5 +19,8 @@ class GraphTest {
         System.out.println("Following is Breadth First Traversal "
                 + "(starting from vertex 2)");
         g.bfs(2);
+
+        log.info("DOne");
+
     }
 }

@@ -1,5 +1,7 @@
 package collections.bfsdfs;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,11 +13,8 @@ import java.util.List;
 public class Node {
 
     /* A Unique Identifier for our node */
+    @Getter
     public String stationName;
-
-    public String getStationName() {
-        return stationName;
-    }
 
     /* An arraylist containing a list of Nodes that.
     This node is directly connected to - It's child nodes. */
