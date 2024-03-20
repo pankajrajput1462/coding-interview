@@ -11,7 +11,15 @@ public class RecursiveFunction {
         for (int i = 1; i <= number; i++) {
             System.out.printf("%s ", getFibonacci(i));
         }
-    } /* * Fibonacci series in Java of a given number Recursion. */
+    }
+
+    public static void fibonacciSeriesWay2(int number) {
+        System.out.printf("\nFibonacci series in Java of number %s using recursion %n", number);
+        for (int i = 1; i <= number; i++) {
+            System.out.printf("%s ", getFibonacci(i));
+        }
+    }
+    /* * Fibonacci series in Java of a given number Recursion. */
 
     public static int getFibonacci(int number) {
         if (number == 1) {
@@ -25,6 +33,7 @@ public class RecursiveFunction {
 
 
     public static int fib(int n) {
+        System.out.println("n = " + n);
         if (n <= 1) {
             return n;
         }
@@ -33,8 +42,9 @@ public class RecursiveFunction {
     }
 
     public static void main(String[] args) {
-        //int n = 9;
-        // System.out.println(fib(n));
-        fibonacciSeries(30);
+        int n = 6;
+        System.out.println(fib(n));
+        fibonacciSeriesWay2(n);
+        fibonacciSeries(n);
     }
 }

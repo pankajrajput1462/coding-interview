@@ -9,15 +9,15 @@ public class SecondLargestInArray {
 
         for (int indexValue : array) {
             if (indexValue > largest) {
-                largest = indexValue;
                 secLargest = largest;
+                largest = indexValue;
             } else if (indexValue > secLargest) {
                 secLargest = indexValue;
             }
         }
 
-        value[0] = secLargest;
-        value[1] = largest;
+        value[0] = largest;
+        value[1] = secLargest;
 
         return value;
 

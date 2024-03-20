@@ -2,6 +2,7 @@ package string;
 
 import java.util.Arrays;
 
+
 /**
  * Created by psi143 on 11/14/2016.
  */
@@ -9,8 +10,8 @@ public class StringUtil {
     /**
      * Permutation of string
      */
-    public static void permutation(String strForPermutation) {
-        permutation("", strForPermutation);
+    public static void permutation(String str) {
+        permutation("", str);
     }
 
     public static void removeDuplicates(char[] strArray) {
@@ -71,14 +72,14 @@ public class StringUtil {
         return false;
     }
 
-    private static void permutation(String prefix, String str) {
-        int n = str.length();
-        if (n == 0)
-            System.out.println(prefix);
+    private static void permutation(String current, String remaining) {
+        if (remaining.isEmpty())
+            System.out.println(current);
         else {
-            for (int i = 0; i < n; i++)
-                permutation(prefix + str.charAt(i),
-                        str.substring(0, i) + str.substring(i + 1, n));
+            for (int i = 0; i < remaining.length(); i++) {
+                String restOfString = remaining.substring(0, i) + remaining.substring(i + 1);
+                permutation(current + remaining.charAt(i), restOfString);
+            }
         }
     }
 
@@ -96,7 +97,7 @@ public class StringUtil {
         for (int i = 0; i < length; i++) {
             data[index] = source.charAt(i);
             if (index == last) {
-                System.out.println("Permutation: "+new String(data));
+                System.out.println("Permutation: " + new String(data));
             } else {
                 allLexographicRec(source, data, last, index + 1);
             }

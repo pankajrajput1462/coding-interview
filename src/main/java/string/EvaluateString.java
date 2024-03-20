@@ -16,10 +16,10 @@ public class EvaluateString {
         char[] tokens = expression.toCharArray();
 
         // Stack for numbers: 'values'
-        Stack<Integer> values = new Stack<Integer>();
+        Stack<Integer> values = new Stack<>();
 
         // Stack for Operators: 'ops'
-        Stack<Character> ops = new Stack<Character>();
+        Stack<Character> ops = new Stack<>();
 
         for (int i = 0; i < tokens.length; i++) {
             // Current token is a whitespace, skip it

@@ -7,7 +7,7 @@ public class Outer {
 
     static class StaticInner {//can access only static variable
 
-        public static void inside() {
+        public void inside() {
             System.out.println(one);
         }
     }

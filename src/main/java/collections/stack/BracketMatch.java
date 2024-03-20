@@ -17,8 +17,9 @@ public class BracketMatch {
                     if (stack.isEmpty())
                         return false;
                     final Character last = stack.peek();
-                    if (singleBracket == '}' && last == '{' || singleBracket == ')'
-                            && last == '(' || singleBracket == ']' && last == '[') {
+                    if (singleBracket == '}' && last == '{' ||
+                            singleBracket == ')' && last == '(' ||
+                            singleBracket == ']' && last == '[') {
                         stack.pop();
 
                     } else {

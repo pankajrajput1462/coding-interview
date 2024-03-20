@@ -1,7 +1,18 @@
 package core.polymorphism;
 
+import concurrency.exception.AirthmaticException;
+
 class Base {
     int baseData = 10;
+
+    static {
+        System.out.println("Static Block- Base ");
+    }
+
+    {
+        System.out.println("Block-Base");
+    }
+
 
     public Base() {
         System.out.println("Base Constructor");
@@ -11,7 +22,7 @@ class Base {
         System.out.println("Base Fun1: " + this.getClass().getName());
     }
 
-    public void fun2() {
+    public void funOverRide() {
         System.out.println("Base Fun2: " + this.getClass().getName());
     }
 
@@ -28,6 +39,14 @@ class Base {
 class BaseImpl extends Base {
     int baseData = 20;
 
+    static {
+        System.out.println("Static Block-Child");
+    }
+
+    {
+        System.out.println("Block-child");
+    }
+
     public BaseImpl() {
         System.out.println("Child Constructor");
     }
@@ -36,15 +55,15 @@ class BaseImpl extends Base {
         System.out.println("Child Fun1: " + this.getClass().getName());
     }
 
-    public void fun2() {
+    public void funOverRide() {
         System.out.println("Child Fun2: " + this.getClass().getName());
     }
 
-    public void fun2(int a) {
+    public void funOverRide(int a) {
         System.out.println("Child Fun2: " + this.getClass().getName());
     }
 
-    public void fun2(float a) {
+    public void funOverRide(float a) {
         System.out.println("Child Fun2: " + this.getClass().getName());
     }
 
@@ -60,7 +79,19 @@ public class OOPSMain {
 
         Base base = new BaseImpl();
         base.fun1();
-        base.fun2();
+        base.funOverRide();
         System.out.println(base.getValue());
+
+//        Casting
+        Base base1 = new Base();
+//        BaseImpl base2 = (BaseImpl) base1;// Runtime error
+//        base2.funOverRide();
+
+        Base base3 = new BaseImpl();
+        BaseImpl cast = (BaseImpl) base3;
+        cast.funOverRide();
+        Base base444 = cast;
+        base444.funOverRide();
+
     }
 }

@@ -18,7 +18,7 @@ class StringUtilTest {
      */
     @Test
     void permutation() {
-        String str = "BCA";
+        String str = "ABC";
         final char[] temp = str.toCharArray();
         Arrays.sort(temp);
         String source = new String(temp);
@@ -27,6 +27,9 @@ class StringUtilTest {
 
     @Test
     void removeDuplicates() {
+        String string = new String("123456");
+        System.out.println(string.substring(0, 3));
+        System.out.println(string.substring(3));
     }
 
     @Test

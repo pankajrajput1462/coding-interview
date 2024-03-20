@@ -1,5 +1,8 @@
 package concurrency.deadlock;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 class WorkerOne implements Runnable {
     public void run() {
         synchronized (DeadLockExample.lockObject1) {
@@ -9,10 +12,10 @@ class WorkerOne implements Runnable {
                 DeadLockExample.lockObject1.wait(500);
                 // DeadLockExample.lockObject1.wait();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                log.error("{}", e.getMessage());
             }
             synchronized (DeadLockExample.lockObject2) {
-                System.out.println(Thread.currentThread().getName() + ": Got lock Object2.");
+                log.info(Thread.currentThread().getName() + ": Got lock Object2.");
             }
         }
     }

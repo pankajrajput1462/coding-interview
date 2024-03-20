@@ -5,13 +5,14 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class Book implements ItemElement {
+public class Book implements VisitableItem {
 
     private int price;
     private String isbn;
+    private int tax;
 
     @Override
-    public int visit(ShoppingCartVisitor visitor) {
+    public int visit(CartVisitor visitor) {
         return visitor.visit(this);
     }
 }

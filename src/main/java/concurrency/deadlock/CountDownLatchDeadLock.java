@@ -10,8 +10,8 @@ public class CountDownLatchDeadLock {
 		Object object2 = new Object();
 		System.out.println("CountDown Created");
 		CountDownLatch latch = new CountDownLatch(2);
-		new Thread(new Locker(object1,object2,latch), "One").start();;
-		new Thread(new Locker(object2,object1,latch), "two").start();;
+		new Thread(new Locker(object1,object2,latch), "One").start();
+		new Thread(new Locker(object2,object1,latch), "two").start();
 		
 		
 	}

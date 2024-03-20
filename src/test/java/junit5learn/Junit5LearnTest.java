@@ -6,8 +6,9 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
 //https://devqa.io/junit-5-annotations/
-public class Junit5LearnTest {
+class Junit5LearnTest {
 
     @BeforeAll
     static void init() {
@@ -15,7 +16,7 @@ public class Junit5LearnTest {
     }
 
     @BeforeEach
-     void runBeforeEachTest(){
+    void runBeforeEachTest() {
         System.out.println("I am running before each test");
     }
 
@@ -24,13 +25,14 @@ public class Junit5LearnTest {
         String callingTest = testInfo.getTestMethod().get().getName();
         System.out.println(callingTest);
     }
+
     @Test
     public void helloJUnit5() {
-        assertEquals(10, 5+5);
+        assertEquals(10, 5 + 5);
     }
 
     @ParameterizedTest
-    @ValueSource(strings = { "cali", "bali", "dani" })
+    @ValueSource(strings = {"cali", "bali", "dani"})
     void endsWithI(String str) {
         assertTrue(str.endsWith("i"));
     }
@@ -39,6 +41,7 @@ public class Junit5LearnTest {
     @DisplayName("Custom test name")
     void testWithDisplayName() {
     }
+
     @Test
     @DisplayName("Print test name")
     void printDisplayName(TestInfo testInfo) {
